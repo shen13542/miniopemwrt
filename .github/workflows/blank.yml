@@ -7,15 +7,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@main
+      - name: Create arm32 directory
+        run: mkdir -p ./arm32 && cd ./arm32
       - name: Initialization environment
         uses: ophub/flippy-openwrt-actions@main
         env:
+          OPENWRT_URL: https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/23.05.0/targets/ramips/mt7620/openwrt-23.05.0-ramips-mt7620-xiaomi_miwifi-mini-squashfs-sysupgrade.bin
           OPENWRT_ARMTYPE: mt7620
-          OPENWRT_TARGET: ramips
-          OPENWRT_SUBTARGET: mt7620
-          OPENWRT_KERNEL: 5.4.241
-          OPENWRT_ARMSR: arm32
           PACKAGE_SOC: mt7620n
-          FILES_INCLUDE: |
-            files/etc/config/network
-            files/etc/config/wireless
