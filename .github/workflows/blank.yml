@@ -1,0 +1,20 @@
+name: Build OpenWrt for Xiaomi Mini
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+      - name: Initialization environment
+        uses: ophub/flippy-openwrt-actions@main
+        env:
+          OPENWRT_ARMTYPE: mt7620
+          OPENWRT_TARGET: ramips
+          OPENWRT_SUBTARGET: mt7620
+          OPENWRT_KERNEL: 5.4.241
+          PACKAGE_SOC: mt7620n
+          FILES_INCLUDE: |
+            files/etc/config/network
+            files/etc/config/wireless
