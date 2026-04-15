@@ -14,6 +14,7 @@ jobs:
           OPENWRT_TARGET: ramips
           OPENWRT_SUBTARGET: mt7620
           OPENWRT_KERNEL: 5.4.241
+          OPENWRT_ARMSR: arm32
           PACKAGE_SOC: mt7620n
           FILES_INCLUDE: |
             files/etc/config/network
