@@ -13,8 +13,7 @@ jobs:
           fetch-depth: 1
 
       - name: Update feeds
-        run:“git clone https://github.com/vernesong/OpenClash package/luci-app-openclash”
-        git clone https://github.com/linkease/luci-app-uugamebooster package/luci-app-uugamebooster
+        run:git clone https://github.com/linkease/luci-app-uugamebooster package/luci-app-uugamebooster
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
